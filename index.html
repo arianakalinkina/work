@@ -6,18 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Онлайн-группы поддержки с опытным психологом</title>
+  <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="css/normalize.css">
-  <!-- <link rel="icon" href="https://zmfoster.ru/favicon.ico" type="image/x-icon"> -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
 
 </head>
 
 <body>
-  <header class="header flex">
-    <nav class="header__menu flex container">
-      <span class="header__menu__logo"><a href="index.html">вокруг</a></span>
-      <ul class="header__menu__list list-reset flex">
+  <header class="header">
+   <div class="container header__container flex">
+    <span class="header__menu__logo"><a href="index.html">вокруг</a></span>
+    <nav class="header__menu">
+      <ul id="menu" class="header__menu__list list-reset menu flex">
         <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#meeting">Как проходят
             встречи</a></li>
         <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#group">Как подбираем
@@ -26,6 +29,10 @@
         <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#test">Тест</a></li>
       </ul>
     </nav>
+      <div class="menu-burger__header">
+          <span></span>
+      </div>
+   </div>
   </header>
   <main class="main">
     <section class="main__hero">
@@ -43,7 +50,7 @@
         </div>
       </div>
     </section>
-
+    <div class="gradient"></div>
     <section class="main__online-groups section section-indent">
       <div class="container main__online-groups__container flex">
         <div class="left online-groups__container__left">
@@ -51,7 +58,7 @@
           <ul class="list-reset online-groups__container__left__list flex">
             <li class="online-groups__container__left__list__item flex">
               <div class="online-groups__container__left__list__item__svg">
-                <svg width="189" height="199" viewBox="0 0 189 199" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="online-groups__container__left__list__item__svg__image" width="189" height="199" viewBox="0 0 189 199" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M88.9019 198.662C88.9019 198.662 188.875 208.483 187.63 95.3152C186.386 -17.8481 86.7303 1.20983 86.7303 1.20983C86.7303 1.20983 -1.09509 0.648961 0.0114963 101.314C1.11879 201.979 88.9019 198.662 88.9019 198.662Z"
                     fill="#93C9BC" />
@@ -224,7 +231,7 @@
                 <h3 class="online-groups__container__left__list__item__content__title">Антистресс</h3>
                 <p class="online-groups__container__left__list__item__content__descr">Управлять уровнем стресса
                   и&nbsp;концентрироваться на&nbsp;позитивных моментах.</p>
-                <button class="online-groups__container__left__list__item__content__button">Подробнее</button>
+                <button class="online-groups__container__left__list__item__content__button button__antistress">Подробнее</button>
               </div>
             </li>
             <li class="online-groups__container__left__list__item flex">
@@ -444,14 +451,18 @@
           </ul>
           <p class="online-groups__container__right__descr">Если вы&nbsp;не&nbsp;нашли подходящей темы&nbsp;&mdash; <a
               class="online-groups__container__right__descr__link" href="#">напишите нам</a></p>
+              <svg class="heart" width="42" height="38" viewBox="0 0 42 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M39.3481 2.26026C27.998 -7.95483 21.9417 19.7668 21.9417 19.7668C21.9417 19.7668 9.838 3.72206 1.5116 13.2019C-6.81026 22.6817 21.9417 38 21.9417 38C21.9417 38 50.6981 12.4753 39.3481 2.26026Z" fill="#F25852"/>
+                </svg>
+                
         </div>
       </div>
     </section>
 
-    <section class="section-indent section section-meetings">
+    <section id="meeting" class="section-indent section section-meetings">
       <div class="container section-meeting__container">
         <h2 class="title section-meeting__container__title">Как проходят встречи</h2>
-        <ul class="list-reset section-meeting__container__list flex">
+        <ul class="list-reset section-meeting__container__list flex owl-carousel">
           <li class="section-meeting__container__list__item">
             <span class="section-meeting__container__list__item__number">1</span>
             <div class="section-meeting__container__list__item__content">
@@ -500,21 +511,43 @@
         <li class="information-section__list__item information-section__list__item-2">
           <p class="information-section__list__item__descr-2">Общайтесь в&nbsp;закрытом чате со&nbsp;своей группой
             в&nbsp;любое время</p>
+            <svg class="information__icon" width="147" height="62" viewBox="0 0 147 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100.932 2.29328L51.1175 0.325471C46.5661 0.145677 42.7245 3.76186 42.5412 8.40211L41.4209 36.762C41.2375 41.4039 44.782 45.3102 49.3334 45.49L64.0568 46.0716C66.41 50.483 71.7783 60.1703 73.5664 60.241C75.4486 60.3153 82.0841 50.5698 84.5238 46.8801L99.1483 47.4578C103.701 47.6377 107.541 44.0231 107.725 39.3812L108.845 11.0213C109.028 6.38102 105.486 2.47314 100.932 2.29328Z" fill="#FFDE2F"/>
+              <path d="M87.0959 17.2333C82.9806 12.0083 75.5941 20.3122 75.5941 20.3122C75.5941 20.3122 69.46 10.7517 64.182 18.0824C59.1822 25.0223 74.6964 34.2489 74.6964 34.2489C74.6964 34.2489 93.6471 25.5587 87.0959 17.2333" fill="#448076"/>
+              <path d="M32.101 10.0032C20.8696 8.44276 16.5938 1.51953 16.5938 1.51953" stroke="#FFDE2F" stroke-width="2" stroke-linecap="round"/>
+              <path d="M118.589 36.5525C129.685 38.8929 133.467 46.0977 133.467 46.0977" stroke="#FFDE2F" stroke-width="2" stroke-linecap="round"/>
+              <path d="M30.6507 22.1352C18.103 19.0095 0.999452 24.3447 0.999452 24.3447" stroke="#FFDE2F" stroke-width="2" stroke-linecap="round"/>
+              <path d="M17.5698 44.4513C21.7306 36.6402 30.0988 32.9583 30.0988 32.9583" stroke="#FFDE2F" stroke-width="2" stroke-linecap="round"/>
+              <path d="M119.154 23.3936C134.066 27.3782 145.874 25.2628 145.874 25.2628" stroke="#FFDE2F" stroke-width="2" stroke-linecap="round"/>
+              <path d="M119.939 12.1565C129.94 11.711 139.257 5.5097 139.257 5.5097" stroke="#FFDE2F" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              
         </li>
       </ul>
     </section>
 
-    <section class="section section-group">
+    <section id="group" class="section section-group">
       <div class="container section-group__container flex">
         <h2 class="title section-group__container__title">
           Как мы подбираем группу
         </h2>
+        <svg class="groups__icon" width="159" height="143" viewBox="0 0 401 362" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M246.503 137.009C246.503 12.9518 134.876 14.2903 134.876 14.2903C134.876 14.2903 0 -1.90277 0 138.318C0 251.387 81.1055 261.806 117.528 260.787C115.54 264.08 112.939 267.909 110.532 269.914C105.797 273.86 99.6895 276.227 100.372 278.595C101.018 280.826 133.914 292.124 157.526 256.598C190.149 249.748 246.503 225.164 246.503 137.009Z" fill="#448076"/>
+          <path d="M357.775 324.923C345.747 332.924 332.515 336.608 320.99 338.167C322.055 339.768 323.208 342.447 322.238 345.794C322.237 345.796 322.236 345.798 322.236 345.8C322.235 345.802 322.235 345.804 322.234 345.806C321.698 347.645 320.661 348.81 320.217 349.271C319.672 349.84 319.137 350.244 318.769 350.5C318.023 351.017 317.262 351.4 316.646 351.675C315.368 352.247 313.851 352.735 312.216 353.11C308.913 353.868 304.542 354.301 299.605 353.718C290.104 352.595 278.964 347.747 269.688 335.346C257.697 332.445 242.086 326.353 229.017 313.46C214.574 299.212 204 277.408 204 244.761C204 221.872 209.192 204.216 217.404 190.7C225.609 177.197 236.552 168.282 247.366 162.436C258.132 156.615 268.813 153.807 276.742 152.441C280.724 151.755 284.062 151.424 286.44 151.265C287.63 151.185 288.583 151.148 289.262 151.131C289.514 151.125 289.728 151.121 289.903 151.12C290.116 151.098 290.392 151.072 290.727 151.044C291.517 150.977 292.638 150.896 294.044 150.832C296.853 150.704 300.816 150.642 305.554 150.893C314.98 151.391 327.735 153.142 340.625 158.266C353.572 163.412 366.808 172.03 376.767 186.285C386.743 200.563 393 219.88 393 245.674C393 287.324 377.802 311.6 357.775 324.923ZM308.453 347.95C308.453 347.95 308.449 347.947 308.44 347.94C308.448 347.947 308.453 347.95 308.453 347.95Z" fill="#E8DFD6" stroke="#F4F2F0" stroke-width="16"/>
+          <path d="M292.1 273.78C290.762 272.545 290.062 270.996 290 269.13C290.062 267.325 290.734 265.806 292.009 264.571C293.282 263.338 294.885 262.721 296.815 262.721C298.867 262.721 300.562 263.353 301.9 264.617C303.238 265.88 303.938 267.446 304 269.311C303.938 271.176 303.272 272.696 301.995 273.87C300.718 275.044 299.115 275.659 297.19 275.721C295.133 275.659 293.438 275.013 292.1 273.78Z" fill="#448076"/>
+          <rect x="75" y="127.721" width="24" height="24" rx="12" fill="#F4F2F0"/>
+          <rect x="111" y="127.721" width="24" height="24" rx="12" fill="#F4F2F0"/>
+          <rect x="147" y="127.721" width="24" height="24" rx="12" fill="#F4F2F0"/>
+          <path d="M295.428 257.174C307.989 261.88 307.894 205.584 296.6 206.285C286.844 206.673 287.876 254.344 295.428 257.174Z" fill="#448076"/>
+          <path d="M130.332 0.22718C129.231 0.320192 128.414 1.28784 128.507 2.38849C128.6 3.48914 129.568 4.30599 130.668 4.21297L130.332 0.22718ZM255 118.72C255 119.825 255.895 120.72 257 120.72C258.105 120.72 259 119.825 259 118.72H255ZM130.668 4.21297C147.948 2.75269 179.129 8.6492 205.961 26.3641C232.684 44.0076 255 73.2999 255 118.72H259C259 71.7403 235.816 41.2825 208.164 23.026C180.621 4.84095 148.552 -1.31254 130.332 0.22718L130.668 4.21297Z" fill="#33765F"/>
+          </svg>
+          
         <ul class="flex list-reset section-group__container__list flex">
           <li class="section-group__container__list__item flex">
             <span class="section-group__container__list__item__number">1.</span>
             <div class="section-group__container__list__item__content">
               <h3 class="section-group__container__list__item__content__title">
-                Познакомьтесь с&nbsp;психологом,<br>который будет вести группу
+                Познакомьтесь с&nbsp;психологом, который будет вести группу
               </h3>
               <p class="section-group__container__list__item__content__descr">
                 Бесплатная 20-ти минутная встреча по&nbsp;Zoom. Психолог поможет определить ваши интересы и&nbsp;цели.
@@ -561,12 +594,12 @@
       </div>
     </section>
 
-    <section class="experts-section section">
+    <section id="experts" class="experts-section section">
       <div class="container experts-section__container">
         <h2 class="experts-section__container__title title">Наши эксперты</h2>
         <p class="experts-section__container__descr">Ведущий создаст доверительные отношения среди участников группы,
           что поможет эффективно взаимодействовать друг с&nbsp;другом.</p>
-        <ul class="experts-section__container__list flex list-reset">
+        <ul class="experts-section__container__list flex list-reset owl-carousel">
           <li class="experts-section__container__list__item">
             <img class="experts-section__container__list__item__img" src="img/experts-1.jpg" alt="Экперт Снежана">
             <div class="experts-section__container__list__item__content">
@@ -629,42 +662,42 @@
               </h3>
               <span class="section-answers__container__accordion__item__link__icon icon"></span>
             </a>
-            <p class="section-answers__container__accordion__item__descr"></p>
+            <p class="section-answers__container__accordion__item__descr">Одна встреча длится 90 минут и стоит 1200 рублей с участника.</p>
           </li>
           <li class="section-answers__container__accordion__item">
             <a href="" class="section-answers__container__accordion__item__link flex">
               <h3 class="section-answers__container__accordion__item__question">Что если мне не понравится?</h3>
               <span class="section-answers__container__accordion__item__link__icon icon"></span>
             </a>
-            <p class="section-answers__container__accordion__item__descr"></p>
+            <p class="section-answers__container__accordion__item__descr">В случае, если у вас появились вопросы или что-то не понравилось на встрече — напишите нам в чат поддержки и мы оперативно предложим решение.</p>
           </li>
           <li class="section-answers__container__accordion__item">
             <a href="" class="section-answers__container__accordion__item__link flex">
               <h3 class="section-answers__container__accordion__item__question">Могу ли я поменять группу?</h3>
               <span class="section-answers__container__accordion__item__link__icon icon"></span>
             </a>
-            <p class="section-answers__container__accordion__item__descr"></p>
+            <p class="section-answers__container__accordion__item__descr">Да, конечно. Если вас что-то не устроило в группе – напишите в чат–поддержки: мы разберемся в вопросе и поможем с его решением.</p>
           </li>
           <li class="section-answers__container__accordion__item">
             <a href="" class="section-answers__container__accordion__item__link flex">
               <h3 class="section-answers__container__accordion__item__question">Насколько группы конфиденциальны?</h3>
               <span class="section-answers__container__accordion__item__link__icon icon"></span>
             </a>
-            <p class="section-answers__container__accordion__item__descr"></p>
+            <p class="section-answers__container__accordion__item__descr">Мы обязуемся не передавать личные контактные данные третьим лицам. А также каждый из участников, включая ведущего группы, подписывает документ о неразглашении содержания встреч.</p>
           </li>
           <li class="section-answers__container__accordion__item">
             <a href="" class="section-answers__container__accordion__item__link flex">
               <h3 class="section-answers__container__accordion__item__question">Можно ли совмещать групповые встречи с личной терапией?</h3>
               <span class="section-answers__container__accordion__item__link__icon icon"></span>
             </a>
-            <p class="section-answers__container__accordion__item__descr"></p>
+            <p class="section-answers__container__accordion__item__descr">Групповая и личная терапия хорошо работают вместе. Случается, что человек обнаруживает что-то в личной терапии, например, проблемы с доверием к другим людям. Группы создадут для него микромодель реального общества и помогут разобраться с этим в безопасной среде.</p>
           </li>
           <li class="section-answers__container__accordion__item">
             <a href="" class="section-answers__container__accordion__item__link flex">
               <h3 class="section-answers__container__accordion__item__question">В чём отличие от других форматов?</h3>
               <span class="section-answers__container__accordion__item__link__icon icon"></span>
             </a>
-            <p class="section-answers__container__accordion__item__descr"></p>
+            <p class="section-answers__container__accordion__item__descr">Группы поддержки не занимаются психотерапией — здесь вы обмениваетесь опытом и поддерживаете друг друга в трудной ситуации. Каждый из участников имеет схожий интерес и цели, что и вы. На встречах также присутствует психолог–ведущий группы, который обеспечивает комфортную атмосферу и следит за тем, чтобы встречи проходили без нарушений правил, давали слово каждому участнику. Также ведущий делится теорией и практическими рекомендациями, отвечает на вопросы и направляет группу.</p>
           </li>
         </ul>
         <p class="section-answers__container__descr">Остались вопросы? Напишите нам в любом мессенджере — мы ответим в
@@ -717,17 +750,93 @@
     </section>
 
     <section class="record-meeting__section section flex">
+      <svg class="stars__mobile" width="68" height="79" viewBox="0 0 68 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.499 57.4634C20.6728 44.1876 16.0212 43.0671 16.0212 43.0671C16.0212 43.0671 12.7333 42.7389 12.207 57.4804C-1.65739 58.1425 0.0685887 61.6907 0.0685887 61.6907C0.0685887 61.6907 -0.242653 65.8726 12.2636 66.7158C12.9653 80.2067 16.4456 78.509 16.4456 78.509C16.4456 78.509 20.5483 78.8202 21.4537 66.7158C34.4071 65.833 35.5106 61.2549 35.5106 61.2549C35.5106 61.2549 35.8218 58.0406 21.499 57.4634" fill="#FFB800"/>
+        <path d="M58.1615 10.1082C57.5814 0.786902 54.3153 0.000191524 54.3153 0.000191524C54.3153 0.000191524 52.0068 -0.230261 51.6373 10.1202C41.9027 10.585 43.1146 13.0763 43.1146 13.0763C43.1146 13.0763 42.896 16.0126 51.677 16.6046C52.1697 26.0769 54.6133 24.8849 54.6133 24.8849C54.6133 24.8849 57.4939 25.1034 58.1297 16.6046C67.2246 15.9847 67.9994 12.7703 67.9994 12.7703C67.9994 12.7703 68.2179 10.5135 58.1615 10.1082" fill="#FFB800"/>
+        </svg>        
      <div class="record-meeting__section__container flex">
-      <h2 class="record-meeting__section__title title">Вы не останетесь с проблемой один на один</h2>
+      <h2 class="record-meeting__section__title title">Вы&nbsp;не&nbsp;останетесь с&nbsp;проблемой один на&nbsp;один</h2>
       <button class="record-meeting__section__button record-button">Записаться на бесплатную встречу</button>
       <p class="record-meeting__section__descr">На&nbsp;встрече психолог расскажет как проходят групповые сессии и&nbsp;уточнит ваш запрос.</p>
      </div>
     </section>
+<!-- Модальные окна -->
+    <div id="modal__antistress" class="modal">
+      <div class="modal__content">
+        <div class="modal__content__left">
+          <button class="modal__close-button"><img src="./img/close.svg" width="18" alt=""></button>
+          <div class="modal-title flex">
+            <svg class="modal-title__svg" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 25.6C0 16.6392 0 12.1587 1.7439 8.73615C3.27787 5.72556 5.72556 3.27787 8.73615 1.7439C12.1587 0 16.6392 0 25.6 0H94.4C103.361 0 107.841 0 111.264 1.7439C114.274 3.27787 116.722 5.72556 118.256 8.73615C120 12.1587 120 16.6392 120 25.6V94.4C120 103.361 120 107.841 118.256 111.264C116.722 114.274 114.274 116.722 111.264 118.256C107.841 120 103.361 120 94.4 120H25.6C16.6392 120 12.1587 120 8.73615 118.256C5.72556 116.722 3.27787 114.274 1.7439 111.264C0 107.841 0 103.361 0 94.4V25.6Z" fill="#F4F2F0"/>
+              <path d="M87.8729 63.3706L87.6294 70.4271C87.6294 70.4271 96.6352 70.9156 94.9307 80.1646C93.2274 89.4141 83.2475 88.6825 82.2748 88.927C81.302 89.1706 80.0845 95.985 80.0845 95.985C86.4131 97.6885 101.503 95.4993 103.207 79.678C104.911 63.8564 87.8729 63.3706 87.8729 63.3706Z" fill="#96242C"/>
+              <path d="M88.1802 54.3512C86.643 53.4289 23.0004 54.3512 23.0004 54.3512C23.0004 54.3512 10.7024 110 54.0531 110C97.4038 110 89.7175 55.2736 88.1802 54.3512Z" fill="#96242C"/>
+              <path d="M39.7571 98.9313C33.9156 95.0881 32.3783 90.1689 32.3783 90.1689C28.9963 89.7077 30.3799 94.9344 36.3752 100.776C42.3705 106.618 46.3674 106.003 47.2897 103.851C48.2121 101.698 45.5987 102.774 39.7571 98.9313Z" fill="#7F2229"/>
+              <path d="M89.564 62.8059C89.564 62.8059 89.7952 68.5712 89.564 70.7233C89.564 70.7233 91.6399 70.9534 91.7936 67.5714C91.9473 64.1894 89.564 62.8059 89.564 62.8059Z" fill="#7F2229"/>
+              <path d="M84.0301 92.7061C82.4928 95.7806 81.6479 97.0104 81.6479 97.0104C81.6479 97.0104 83.4927 98.0865 85.4911 94.8583C87.4895 91.63 86.336 87.7095 86.336 87.7095C86.336 87.7095 85.5674 89.6316 84.0301 92.7061Z" fill="#7F2229"/>
+              <path d="M54.9755 19.7107C53.9511 10.8979 46.1627 9.25735 46.5723 12.9468C46.5723 12.9468 51.2861 13.9724 51.2861 19.9161C51.2861 25.8597 38.988 26.4747 39.8083 35.2887C40.6286 44.1027 49.4414 41.2336 49.4414 43.4878C49.4414 45.742 46.3681 47.7909 48.0074 48.6112C49.6468 49.4315 53.7457 48.6112 54.3606 41.8472C54.9755 35.0833 45.1383 36.7226 46.1627 31.3939C47.1872 26.0651 56 28.5235 54.9755 19.7107Z" fill="#D8CCC6"/>
+              <path d="M61.5354 18.8926C61.5354 18.8926 64.4058 21.7605 63.5855 25.2458C62.7652 28.7311 59.0746 29.9609 60.7151 31.1907C62.3557 32.4205 67.6844 31.1907 68.2993 25.6566C68.9143 20.1224 62.3557 16.433 61.5354 18.8926Z" fill="#D8CCC6"/>
+              </svg>              
+            <h2 class="modal__content__left__title">Что будет на встречах «Антистресс»?</h2>
+          </div>
+          <ul class="modal__content__left__list list-reset">
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Что такое стресс?</h3>
+              <p class="modal__content__left__list__item__descr">Как я ощущаю стресс. Причины и симптомы стресса.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Физиология стресса</h3>
+              <p class="modal__content__left__list__item__descr">Как организм реагирует на стресс и какие эмоции вызывает.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Что делать в момент стресса?</h3>
+              <p class="modal__content__left__list__item__descr">Научитесь останавливать стрессовую реакцию в кризисной ситуации, чтобы сохранить самоконтроль.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Что делать в момент стресса?</h3>
+              <p class="modal__content__left__list__item__descr">Научитесь останавливать стрессовую реакцию в кризисной ситуации, чтобы сохранить самоконтроль.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Что я делаю не так?</h3>
+              <p class="modal__content__left__list__item__descr">Какие привычки усложняют стрессовое состояние.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Профессиональные стрессы</h3>
+              <p class="modal__content__left__list__item__descr">Профессиональное выгорание. Синдром хронической усталости. Профессиональная деформация личности.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Как восстановиться после стресса?</h3>
+              <p class="modal__content__left__list__item__descr">Инструменты экспресс восстановления, которые помогут вам справиться после всплеска эмоций.</p>
+            </li>
+            <li class="modal__content__left__list__item">
+              <h3 class="modal__content__left__list__item__title">Профилактика стресса</h3>
+              <p class="modal__content__left__list__item__descr">Несколько способов повысить свою стрессоустойчивость, чтобы легче справляться с трудностями в будущем.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="modal__content__right flex">
+          <h3 class="online-groups__container__right__title">Запишитесь на&nbsp;бесплатную
+            встречу&nbsp;с&nbsp;психологом</h3>
+          <ul class="modal__content__right__list list-reset">
+            <li class="online-groups__container__right__list__item">Узнайте как проходят групповые сессии.</li>
+            <li class="online-groups__container__right__list__item">Уточните вас запрос вместе с&nbsp;психологом.</li>
+            <li class="online-groups__container__right__list__item right__list__item-last">По&nbsp;итогу встречи
+              сформируем запрос на&nbsp;подбор группы.</li>
+          </ul>
+          <form action="">
+            <button class="record-button online-groups__container__right__list__button">Записаться</button>
+            <p>Вводя свой номер, вы&nbsp;принимаете условия пользовательского соглашения и&nbsp;даёте согласие на&nbsp;обработку персональных данных.</p>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
 
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="owlcarousel/owl.carousel.min.js"></script>
   <script src="js/index.js"></script>
 </body>
