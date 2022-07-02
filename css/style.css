@@ -156,7 +156,7 @@ header {
 .main__hero {
   padding-top: 160px;
   height: 900px;
-  background: url('../img/hero.jpg') center no-repeat;
+  background: url('../img/hero.jpg') -60px center no-repeat;
   background-size: cover;
 }
 
@@ -378,7 +378,7 @@ header {
 
 .section-meeting__container__list__item {
   margin-bottom: 24px;
-  padding: 32px;
+  padding: 32px 32px 48px 32px;
   width: 31.94%;
   height: 558px;
   background-color: #F4F2F0;
@@ -422,20 +422,18 @@ header {
   width: 65.97%;
 }
 
-.section-meetings__item-3 {
-  width: 65.97%;
-}
 
 .section-meetings__item__number-2, .section-meetings__item__title-2, .section-meetings__item__descr-2 {
   color: #fff;
 }
 
 .section-meetings__item__content {
-  width: 42%;
+  width: 40%;
 }
 
 .section-meetings__item-3 {
-  background: url('../img/meetings-3.svg') right no-repeat;
+  width: 65.97%;
+  background: url('../img/meetings-3.svg') right 30px top 50px no-repeat;
   background-color: #F4F2F0;
 }
 
@@ -540,6 +538,7 @@ header {
 }
 
 .section-group__container__list__item__content__descr {
+  width: 90%;
   font-size: 20px;
   line-height: 32px;
   color: #666;
@@ -737,6 +736,7 @@ header {
   padding: 56px 0 64px 0;
   text-align: center;
   justify-content: center;
+  margin-bottom: 56px;
   
   background: url('../img/heart.svg') left 145px bottom 98px no-repeat,
   url('../img/stars.svg') right 98px top 55px no-repeat;
@@ -785,6 +785,35 @@ header {
   display: none;
 }
 
+/* footer */
+.footer {
+  justify-content: center;
+}
+
+.footer__container {
+  width: 80.82%;
+  padding-bottom: 48px;
+  justify-content: space-between;
+}
+
+.footer__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;  
+  color: #3333338F;
+}
+
+.footer__text:not(:last-child), .footer__container__svg {
+  margin-right: 10px;
+}
+
+.footer__container__left, .footer__container__right {
+  align-items: center;
+}
+
+.footer__logo {
+  display: none;
+}
 
 /* modal */
 
