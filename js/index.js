@@ -1,3 +1,95 @@
+console.log('Init!');
+
+var selector = document.querySelectorAll("input[type='tel']");
+
+var im = new Inputmask("+7(999) 999-99-99");
+im.mask(selector);
+
+  // const form = document.getElementsByClassName('.form');
+  // form.addEventListener('submit', FormData);
+  new window.JustValidate('.form', {
+    rules: {
+      tel: {
+        required: true,
+        function: () => {
+          const phone = telSelector.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        }
+      }
+    },
+    colorWrong: '#ff0f0f',
+    messages: {
+      name: {
+        required: 'Введите имя',
+        minLength: 'Введите 3 и более символов',
+        maxLength: 'Запрещено вводить более 15 символов'
+      },
+      tel: {
+        required: 'Введите телефон',
+        function: 'Здесь должно быть 10 символов без +7'
+      }
+    },
+    submitHandler: function(thisForm) {
+      // thisForm.preventDefault();
+      let formData = new FormData(thisForm);
+  
+      let xhr = new XMLHttpRequest();
+  
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Отправлено');
+          }
+        }
+      }
+  
+      xhr.open('POST', 'mail.php', true);
+      xhr.send(formData);
+  
+      thisForm.reset();
+    }
+  });
+
+$(function () {
+  $('.record-button').click(function () {
+    $('#modal__connect').addClass('modal_active');
+    $('body').addClass('hidden');
+  });
+ 
+  $('.modal__close-button').click(function () {
+    $('#modal__connect').removeClass('modal_active');
+    $('body').removeClass('hidden');
+  });
+ 
+  $('#modal__connect').mouseup(function (e) {
+    let modalContent = $(".modal__connect__content");
+    if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
+      $(this).removeClass('modal_active');
+      $('body').removeClass('hidden');
+    }
+  });
+});
+
+$(function () {
+  $('.button__antistress').click(function () {
+    $('#modal__antistress').addClass('modal_active');
+    $('body').addClass('hidden');
+  });
+ 
+  $('.modal__close-button').click(function () {
+    $('.modal').removeClass('modal_active');
+    $('body').removeClass('hidden');
+  });
+ 
+  $('.modal').mouseup(function (e) {
+    let modalContent = $(".modal__content");
+    if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
+      $(this).removeClass('modal_active');
+      $('body').removeClass('hidden');
+    }
+  });
+});
+
 $(document).ready(function() {
 	$('.menu-burger__header').click(function(){
         $('.menu-burger__header').toggleClass('open-menu');
@@ -48,22 +140,25 @@ $(".accordion").accordion({
   active: 0
   });
 
-  $(function () {
-    $('.button__antistress').click(function () {
-      $('#modal__antistress').addClass('modal_active');
-      $('body').addClass('hidden');
-    });
-   
-    $('.modal__close-button').click(function () {
-      $('.modal').removeClass('modal_active');
-      $('body').removeClass('hidden');
-    });
-   
-    $('.modal').mouseup(function (e) {
-      let modalContent = $(".modal__content");
-      if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
-        $(this).removeClass('modal_active');
-        $('body').removeClass('hidden');
-      }
-    });
-  });
+  
+
+  // для окна с благодарностью
+// $(function () {
+//   $('.record-button').click(function () {
+//     $('#thank-you__modal').addClass('modal_active');
+//     $('body').addClass('hidden');
+//   });
+ 
+//   $('.thank-you__modal__button').click(function () {
+//     $('#thank-you__modal').removeClass('modal_active');
+//     $('body').removeClass('hidden');
+//   });
+ 
+//   $('#thank-you__modal').mouseup(function (e) {
+//     let modalContent = $(".modal__connect__content");
+//     if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
+//       $(this).removeClass('modal_active');
+//       $('body').removeClass('hidden');
+//     }
+//   });
+// });

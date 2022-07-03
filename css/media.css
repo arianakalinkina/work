@@ -1,4 +1,4 @@
-@media(max-width: 767px) {
+@media(max-width: 664px) {
   .header__menu__logo {
     font-size: 20px;
     letter-spacing: 4px;
@@ -96,8 +96,10 @@
   }
 
   .main__online-groups {
+    padding-top: 16px;
     position: static;
     background-color: inherit;
+    width: 100%;
   }
   
   .online-groups__container__left {
@@ -108,9 +110,8 @@
   }
 
 .main__hero {
-  position: relative;
   padding-top: 0;
-  height: 684px;
+  height: auto;
   background: none;
 }
 
@@ -119,19 +120,24 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 400px;
-  background: url('../img/hero-mobile.jpg') no-repeat;
-  background-size: cover;
+  /* height: 400px; */
+  padding-top: 320px;
+  background: url('../img/hero-mobile.jpg') top right -180px no-repeat;
+  background-size: auto 400px, cover;
+  /* background-position: top; */
+  /* background-size: cover; */
+ 
 }
 
 .main__hero__container__content {
   padding: 16px 16px 32px 16px;
   width: 92.5%;
   margin: 0 auto;
-  position: absolute;
+  /* position: relative; */
   background-color: #fff;
-  top: 320px;
+  /* top: 320px; */
   border-radius: 16px;
+  /* max-width: 320px; */
 }
 
 .main__hero__container__content__title {
@@ -230,6 +236,7 @@
 .online-groups__container__right {
   margin-bottom: 50px;
   position: relative;
+  align-items: center;
   padding: 16px 16px 24px 16px;
   background-color: #33765F;
 }
@@ -262,6 +269,7 @@
   margin-bottom: 32px;
 }
 
+
 .online-groups__container__right__list__button {
   margin-bottom: 16px;
   width: 264px;
@@ -278,6 +286,8 @@
 }
 
 .online-groups__container__right__descr, .online-groups__container__right__descr__link {
+  padding-top: 0;
+  border: none;
   color:#FFFFFFA3;
   font-size: 12px;
   line-height: 16px;
@@ -340,6 +350,7 @@
   .section-group__container__list {
     border-top: none;
     width: 100%;
+    align-items: center;
   }
 
   .section-group__container__list__item__number {
@@ -354,6 +365,7 @@
     padding-top: 24px;
     padding-bottom: 24px;
   }
+
 
   .section-group__container__list__item__content__title {
     font-size: 18px;
@@ -377,13 +389,22 @@
   }
 
   .section-group__container__list__item__content__button {
+    display: none;
+  }
+
+  .button__center {
+    display: block;
     width: 264px;
     height: 48px;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
-    margin-left: -17%;
   }
+
+  .section-group__container__list__item__content__title-last {
+    margin-bottom: 0;
+  }
+
 
   .section-answers__container {
     width: 82.5%;
@@ -584,6 +605,8 @@
   }
   
   .experts-section__container__list__item {
+    padding-top: 80px;
+    position: relative;
     background-color: inherit;
     border-radius: 16px;
     width: 100%;
@@ -613,13 +636,15 @@
 
 
   .experts-section__container__list__item__img {
+    position: absolute;
+    top: 0px;
     border-radius: 1000px;
     max-width: 160px;
     max-height: 160px;
-    margin-bottom: 16px;
   }
   
   .experts-section__container__list__item__content {
+    padding-top: 94px;
     background-color: #fff;
     border-radius: 16px;
   }
@@ -630,7 +655,7 @@
 
   .section-group {
     padding-top: 16px;
-    padding-bottom: 0;
+    padding-bottom: 16px;
     margin-bottom: 35px;
   }
 
@@ -673,6 +698,178 @@
     flex-direction: column;
   }
 
-  
+  /* modal connect */
+  .modal {
+    padding: 0 0;
+  }
+
+  .modal__content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal__connect__content__connect__left__title {
+    margin-bottom: 64px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .modal__connect__content__connect__left {
+    margin-bottom: 16px;
+    border-radius: 16px;
+    align-items: stretch;
+    padding: 24px 28px 24px 28px;
 }
 
+  .input {
+  width: 100%;
+  height: 48px;
+}
+
+  input::-webkit-input-placeholder { 
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #999;
+  }
+
+  .form__button {
+    margin-bottom: 16px;
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  
+  .modal__connect__content__connect__left__descr {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    color: #ADADAD;
+  }
+
+  .modal__connect__content__connect__right__title {
+    font-family: 'Montserrat';
+    margin-bottom: 32px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .modal__connect__content__connect__right {
+    padding: 24px 0 48px 28px;
+    border-radius: 16px;
+    background: url('../img/connect__modal__back.svg') right -40px bottom no-repeat;
+    background-color: #F4F2F0;
+  }
+  
+  .modal__connect__content__connect__right__list__item {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #3333338F;
+    width: 80%;
+  }
+
+  /* modal online-group */
+  .modal__content__left {
+    width: 100%;
+    padding: 24px 53px 12px 28px;
+    margin-bottom: 16px;
+  }
+
+  .modal__content__left__title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;     
+  }
+
+  .modal-title {
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .modal__content__left__list__item__title {
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .modal__content__left__list__item__descr {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #3333338F;
+  }
+  
+.modal__content__left__list__item {
+  margin-bottom: 20px;
+}
+
+.modal__content__right {
+  flex-basis: 100%;
+  background-color: #33765F;
+  border-radius: 16px;
+}
+
+.modal__right__button {
+  background-color: #333;
+}
+
+.modal__right__descr {
+  color: #FFFFFF7A;
+}
+
+/* thank-you__modal */
+.thank-you__modal__content {
+  padding-top: 48px;
+  padding-bottom: 28px;
+  padding: 48px 28px 28px 28px;
+  justify-content: center;
+  align-items: center;
+}
+
+.thank-you__modal__container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.thank-you__modal__title {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.thank-you__modal__descr {
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.thank-you__modal__button {
+  background-color: #33765F;
+  width: 100%;
+  height: 48px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.thank-you__modal__svg {
+  margin-bottom: 24.63px;
+  width: 212px;
+  height: 90px;
+}
+
+.section-group__container__list__item__last {
+  border-bottom: none;
+}
+}
