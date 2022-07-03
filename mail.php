@@ -30,15 +30,15 @@ try {
 
   // Настройки вашей почты
   $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
-  $mail->Username   = 'arianakalinkina@mail.ru'; // Логин на почте
-  $mail->Password   = '4wteKQQQ3qcarmFQN8x1'; // Пароль на почте
+  $mail->Username   = ''; // Логин на почте
+  $mail->Password   = ''; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('arianakalinkina@mail.ru', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('arianakalinkina@mail.ru');
+  $mail->addAddress('');
 
   // Отправка сообщения
   $mail->isHTML(true);
