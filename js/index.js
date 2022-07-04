@@ -115,9 +115,10 @@ $(document).ready(function() {
    if( window.innerWidth <= 767 ){
     $(document).ready(function(){
       $(".owl-carousel").owlCarousel({
-        items:1.15,
-        loop: true,
-        margin:8
+        items:1.23,
+        loop: false,
+        margin:8,
+        center:true
       });
     });
 }
@@ -137,7 +138,8 @@ $(window).scroll(function() {
 
 $(".accordion").accordion({
   heightStyle: "content",
-  active: 0
+  collapsible:true,
+  active: false
   });
 
   
