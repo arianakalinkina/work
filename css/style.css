@@ -51,6 +51,9 @@ button:hover {
   border-radius: 16px;
 }
 
+.hero__mobile {
+  display: none;
+}
 
 .online-groups__container__left__list__item__content__button:hover, .online-groups__container__right__descr__link:hover {
   background-color: inherit;
@@ -59,7 +62,7 @@ button:hover {
 }
 
 .footer__text:hover {
-  border-bottom: 1px solid #3333338F;
+  border-bottom: 0.5px solid #3333338F;
   margin-bottom: -1px;
 } 
 
@@ -67,13 +70,8 @@ button:hover {
   border-bottom: none;
 }
 
-.section-answers__container__accordion__item:hover, .section-answers__container__accordion__item:last-child:hover {
-  border-bottom: 1px solid #3333338F;
-  border-top: 1px solid #3333338F;
-}
-
 .section-answers__container__accordion__item:hover .icon {
-  transform: rotate(180deg);
+ background: url('../img/accordion-hover-icon.svg') center no-repeat;
 }
 
 .questions__list__item:hover ellipse {
@@ -104,26 +102,26 @@ button:hover {
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'DMSans';
-  src: local('DMSansMedium'), url('../fonts/NotoSans-Medium.ttf') format("ttf");
+/* @font-face {
+  font-family: 'Noto Sans';
+  src: local('NotoSansMedium'), url('../fonts/NotoSans-Medium.ttf') format("ttf");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-}
+} */
 
-@font-face {
-  font-family: 'DMSans';
-  src: local('DMSansRegular'), url('../fonts/NotoSansRegular.woff2') format("woff2"), url('../fonts/NotoSansRegular.woff') format("woff");
+/* @font-face {
+  font-family: 'Noto Sans';
+  src: local('DMSansRegular'), url('../fonts/NotoSansRegular.woff2') format("woff2"), url('../fonts/NotoSansRegular.woff') format("woff"); 
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 body {
   max-width: 1366px;
   margin: 0 auto;
-  font-family: 'DMSans',sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   background-color: #F4F2F0;
   position: relative;
 }
@@ -137,6 +135,7 @@ header {
   padding: 0;
   list-style: none;
 }
+
 
 .flex {
   display: flex;
@@ -175,7 +174,7 @@ header {
 }
 
 .header__container {
-  padding-top: 16px;
+  padding-top: 48px;
   align-items: center;
   justify-content: space-between;
 }
@@ -209,14 +208,17 @@ header {
 /* hero */
 
 .main__hero {
+  margin-top: 24px;
+  margin-bottom: 24px;
   padding-top: 160px;
-  height: 900px;
-  background: url('../img/hero.jpg') -60px center no-repeat;
+  padding-bottom: 80px;
+  height: 808px;
+  background: url('../img/hero.jpg') 0px center no-repeat;
   background-size: cover;
 }
 
 .main__hero__container__content {
-  width: 42%;
+  width: 45%;
 }
 
 .main__hero__container__content__title {
@@ -285,11 +287,13 @@ header {
 }
 
 .main__online-groups {
-  padding-top: 64px;
+  /* padding-top: 64px;
   padding-bottom: 80px;
   position: relative;
   top: -50px;
-  z-index: 10;
+  z-index: 10; */
+  padding-top: 64px;
+  padding-bottom: 80px;
 }
 
 .online-groups__container__left__list__item {
@@ -313,14 +317,14 @@ header {
   width: 90%;
 }
 
-.gradient {
+/* .gradient {
   height: 250px;
   position: absolute;
   top: 855px;
   z-index: -1;
   width: 100%;
   background: linear-gradient(180deg, #D4D4D4 41.67%, rgba(217, 217, 217, 0) 100%);
-}
+} */
 
 .online-groups__container__left__list {
   flex-wrap: wrap;
@@ -421,7 +425,7 @@ header {
 
 /* meetings */
 .section-meetings {
-  margin-top: -50px;
+  margin-top: 0px;
   padding-top: 56px;
   padding-bottom: 40px;
 }
@@ -596,6 +600,7 @@ header {
   line-height: 32px;
   color: #333;
   width: 69%;
+  font-family: 'Montserrat';
 }
 
 .section-group__container__list__item__content__title-last {
@@ -756,9 +761,9 @@ transition-property: transform, opacity, border-radius;
   align-items: flex-end;
   width: 36px;
   background: url('../img/accordion-icon.svg') center no-repeat;
-  transition-duration: .4s;
+  transition-duration: .3s;
   transition-timing-function: ease;
-  transition-property: transfrom;
+  transition-property: transform, background;
 }
 
 
@@ -776,6 +781,7 @@ transition-property: transform, opacity, border-radius;
 }
 
 .ui-accordion .ui-accordion-content {
+  font-family: 'Noto Sans';
   padding: 0;
   padding-bottom: 33px;
   width: 90%;
@@ -840,6 +846,7 @@ transition-property: transform, opacity, border-radius;
 }
 
 .record-meeting__section__button {
+  font-family: 'Noto Sans', sans-serif;
   margin-bottom: 24px;
   background-color: #222;
   width: 480px;
@@ -961,6 +968,8 @@ transition-property: transform, opacity, border-radius;
 }
 
 .modal__content__right {
+  position: sticky;
+  top: 0;
   padding: 32px 32px 23px 32px;
   flex-direction: column;
   flex-basis: 31.94%;
@@ -1186,4 +1195,26 @@ font-family: 'DM Sans', sans-serif;
 
 .thank-you__modal__svg {
   margin-bottom: 40px;
+}
+
+.main__hero {
+  margin-top: 24px;
+}
+
+.scroll {
+  background-color: #fff;
+  margin-top: -32px;
+  padding-bottom: 16px;
+}
+
+.scroll__button__mobile {
+  display: none;
+}
+
+.cursor {
+  cursor: url('../img/cursor.svg'), pointer;
+}
+
+.nocursor {
+  cursor: auto;
 }

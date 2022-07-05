@@ -54,11 +54,15 @@ $(function () {
   $('.record-button').click(function () {
     $('#modal__connect').addClass('modal_active');
     $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
   });
  
   $('.modal__close-button').click(function () {
     $('#modal__connect').removeClass('modal_active');
     $('body').removeClass('hidden');
+    $('body').removeClass('cursor');
   });
  
   $('#modal__connect').mouseup(function (e) {
@@ -66,6 +70,7 @@ $(function () {
     if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
       $(this).removeClass('modal_active');
       $('body').removeClass('hidden');
+      $('body').removeClass('cursor');
     }
   });
 });
@@ -74,11 +79,15 @@ $(function () {
   $('.button__antistress').click(function () {
     $('#modal__antistress').addClass('modal_active');
     $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
   });
  
   $('.modal__close-button').click(function () {
     $('.modal').removeClass('modal_active');
     $('body').removeClass('hidden');
+    $('body').removeClass('cursor');
   });
  
   $('.modal').mouseup(function (e) {
@@ -86,6 +95,7 @@ $(function () {
     if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
       $(this).removeClass('modal_active');
       $('body').removeClass('hidden');
+      $('body').removeClass('cursor');
     }
   });
 });
@@ -124,7 +134,7 @@ $(document).ready(function() {
 }
    var header = $('.header'),
 	scrollPrev = 0;
-
+  if( window.innerWidth >= 767 ){
 $(window).scroll(function() {
 	var scrolled = $(window).scrollTop();
  
@@ -132,17 +142,65 @@ $(window).scroll(function() {
 		header.addClass('out');
 	} else {
 		header.removeClass('out');
+    header.addClass('scroll');
 	}
+  if (scrolled === 0) {
+    header.removeClass('scroll');
+  }
 	scrollPrev = scrolled;
 });
+  };
+  scrollPrev = 0;
+  var button = $('.scroll__button__mobile');
+  if( window.innerWidth <= 767 ){
+    $(window).scroll(function() {
+      var scrolled = $(window).scrollTop();
+     
+      if ( scrolled > 50 && scrolled > scrollPrev ) {
+        button.addClass('out');
+        button.addClass('display');
+        header.addClass('out');
+      } else {
+        button.removeClass('display');
+        header.removeClass('out');
+        header.addClass('scroll');
+      }
+      if (scrolled === 0) {
+        header.removeClass('scroll');
+      }
+      scrollPrev = scrolled;
+    });
+};
+
+//функция которя будет отслеживать
+$.fn.isInViewport = function() {
+  let elementTop = $(this).offset().top;
+  let elementBottom = elementTop + $(this).outerHeight();
+
+  let viewportTop = $(window).scrollTop();
+  let viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+// ну и отслеживаем
+
+$(window).on('resize scroll', function () {
+            if ($('.tracking').isInViewport()) {
+              setTimeout(() => { 
+                $('.scroll__button__mobile').addClass('delete');
+              }, 50);
+    
+            } else {
+              $('.scroll__button__mobile').removeClass('delete');
+            }
+          });
 
 $(".accordion").accordion({
   heightStyle: "content",
   collapsible:true,
   active: false
   });
-
-  
 
   // для окна с благодарностью
 // $(function () {
