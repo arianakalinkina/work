@@ -5,8 +5,7 @@ var selector = document.querySelectorAll("input[type='tel']");
 var im = new Inputmask("+7(999) 999-99-99");
 im.mask(selector);
 
-  // const form = document.getElementsByClassName('.form');
-  // form.addEventListener('submit', FormData);
+  const form = document.getElementsByClassName('.form');
   new window.JustValidate('.form', {
     rules: {
       tel: {
@@ -22,33 +21,37 @@ im.mask(selector);
       name: {
         required: 'Введите имя',
         minLength: 'Введите 3 и более символов',
-        maxLength: 'Запрещено вводить более 15 символов'
+        maxLength: 'Запрещено вводить более 15 символов',
+        function () {
+          ('.validate').addClass('disp');
+         }
       },
       tel: {
         required: 'Введите телефон',
-        function: 'Здесь должно быть 10 символов без +7'
+        function: 'Здесь должно быть 10 символов без +7',
+        function () {
+          ('.validate').addClass('disp');
+         }
       }
-    },
-    submitHandler: function(thisForm) {
-      // thisForm.preventDefault();
-      let formData = new FormData(thisForm);
-  
-      let xhr = new XMLHttpRequest();
-  
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            console.log('Отправлено');
-          }
-        }
-      }
-  
-      xhr.open('POST', 'mail.php', true);
-      xhr.send(formData);
-  
-      thisForm.reset();
     }
-  });
+      });
+  // new JustValidate('.form', {
+  //   rules: {
+  //     name: {
+  //       required: true,
+  //       minLength: 3,
+  //       maxLenght:30
+  //     },
+  //     tel: {
+  //       required: true,
+  //       function: () => {
+  //         const phone = selector.Inputmask.unmaskedvalue()
+  //         console.log(phone)
+  //         return Number(phone) && phone.lenght ===10
+  //       }
+  //     },
+  //     },
+  // });
 
 $(function () {
   $('.record-button').click(function () {
@@ -75,6 +78,37 @@ $(function () {
   });
 });
 
+
+
+if( window.innerWidth <= 664 ){
+  //функция которя будет отслеживать
+$.fn.isInViewport = function() {
+  let elementTop = $(this).offset().top;
+  let elementBottom = elementTop + $(this).outerHeight();
+
+  let viewportTop = $(window).scrollTop();
+  let viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+// ну и отслеживаем
+
+$(window).on('resize scroll', function () {
+            if ($('.tracking').isInViewport()) {
+              setTimeout(() => { 
+                $('.scroll__button__mobile').addClass('delete');
+              }, 50);
+    
+            } else {
+              $('.scroll__button__mobile').removeClass('delete');
+            }
+          });
+
+          $('.button__antistress').click(function () {
+            $('.button__center__mobile__modal').addClass('disp');
+          });
+        }
 $(function () {
   $('.button__antistress').click(function () {
     $('#modal__antistress').addClass('modal_active');
@@ -172,29 +206,7 @@ $(window).scroll(function() {
     });
 };
 
-//функция которя будет отслеживать
-$.fn.isInViewport = function() {
-  let elementTop = $(this).offset().top;
-  let elementBottom = elementTop + $(this).outerHeight();
 
-  let viewportTop = $(window).scrollTop();
-  let viewportBottom = viewportTop + $(window).height();
-
-  return elementBottom > viewportTop && elementTop < viewportBottom;
-};
-
-// ну и отслеживаем
-
-$(window).on('resize scroll', function () {
-            if ($('.tracking').isInViewport()) {
-              setTimeout(() => { 
-                $('.scroll__button__mobile').addClass('delete');
-              }, 50);
-    
-            } else {
-              $('.scroll__button__mobile').removeClass('delete');
-            }
-          });
 
 $(".accordion").accordion({
   heightStyle: "content",

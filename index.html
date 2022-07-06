@@ -24,13 +24,14 @@
       <span class="header__menu__logo"><a href="index.html">вокруг</a></span>
       <nav class="header__menu">
         <ul id="menu" class="header__menu__list list-reset menu flex">
+          <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#topics">Темы</a></li>
           <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#meeting">Как проходят
               встречи</a></li>
           <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#group">Как подбираем
               группу</a></li>
           <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#experts">Эксперты</a>
           </li>
-          <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#test">Тест</a></li>
+          <!-- <li class="header__menu__list__item"><a class="header__menu__list__item__link" href="#test">Тест</a></li> -->
         </ul>
       </nav>
       <div class="menu-burger__header">
@@ -55,7 +56,7 @@
         </div>
       </div>
     </section>
-    <section class="main__online-groups section section-indent">
+    <section id="topics" class="main__online-groups section section-indent">
       <div class="container main__online-groups__container flex">
         <div class="left online-groups__container__left">
           <h2 class="online-groups__container__left__title title">C&nbsp;чем могут помочь онлайн-группы</h2>
@@ -673,7 +674,7 @@
               <h3 class="experts-section__container__list__item__content__name">Дмитрий</h3>
               <ul class="experts-section__container__content__list flex list-reset">
                 <li class="experts-section__container__content__list__item">9 лет опыта.</li>
-                <li class="experts-section__container__content__list__item">Дипломированный медицинский(клинический)
+                <li class="experts-section__container__content__list__item">Дипломированный медицинский&shy;(клинический)
                   психолог.</li>
                 <li class="experts-section__container__content__list__item">Диплом Санкт-Петербургской государственной
                   медицинской академии имени И. И. Мечникова. Подготовка по циклу «Психиатрия и наркология».</li>
@@ -894,8 +895,9 @@
                 чтобы легче справляться с&nbsp;трудностями в&nbsp;будущем.</p>
             </li>
           </ul>
+          <button class="button__center__mobile__modal scroll__button__mobile record-button">Записаться</button>
         </div>
-        <div class="modal__content__right flex">
+        <div class="modal__content__right flex tracking">
           <button class="modal__close-button"><img src="./img/close.svg" width="18" alt=""></button>
           <h3 class="online-groups__container__right__title">Запишитесь на&nbsp;бесплатную
             встречу&nbsp;с&nbsp;психологом</h3>
@@ -906,18 +908,20 @@
               По&nbsp;итогу встречи
               сформируем запрос на&nbsp;подбор группы.</li>
           </ul>
-          <form action="#" class="form flex" method="POST" enctype="multipart/form-data">
+          <form class="form flex">
             <label class="form__label">
               <input class="input input-name" type="text" data-validate-field="name" name="Имя" placeholder="Ваше имя">
+              <span class="validate"></span>
             </label>
             <label class="form__label">
               <input class="input input-tel" type="tel" data-validate-field="tel" name="Телефон" placeholder="Телефон">
+              <span class="validate"></span>
             </label>
-            <button type="submit" class="button form__button modal__right__button">Записаться</button>
+            <button class="button form__button modal__right__button">Записаться</button>
           </form>
           <p class="modal__connect__content__connect__left__descr modal__right__descr">Вводя свой номер,
-            вы&nbsp;принимаете условия пользовательского соглашения и&nbsp;даёте согласие на&nbsp;обработку персональных
-            данных.</p>
+            вы&nbsp;принимаете условия <a class="agree" href="">пользовательского соглашения</a> и&nbsp;даёте согласие на&nbsp;<a class="agree" href="">обработку персональных
+              данных</a>.</p>
         </div>
       </div>
     </div>
@@ -929,17 +933,19 @@
           <button class="modal__close-button"><img src="./img/close.svg" width="18" alt=""></button>
           <h2 class="modal__connect__content__connect__left__title">Запись на&nbsp;бесплатную консультацию
             с&nbsp;психологом</h2>
-          <form action="#" class="form flex" method="POST" enctype="multipart/form-data">
+          <form class="form flex">
             <label class="form__label">
               <input class="input input-name" type="text" data-validate-field="name" name="Имя" placeholder="Ваше имя">
+              <span class="validate"></span>
             </label>
             <label class="form__label">
               <input class="input input-tel" type="tel" data-validate-field="tel" name="Телефон" placeholder="Телефон">
+              <span class="validate"></span>
             </label>
-            <button type="submit" class="button form__button">Записаться</button>
+            <button class="button form__button">Записаться</button>
           </form>
           <p class="modal__connect__content__connect__left__descr">Вводя свой номер, вы&nbsp;принимаете условия
-            пользовательского соглашения и&nbsp;даёте согласие на&nbsp;обработку персональных данных.</p>
+            <a class="agree" href="">пользовательского соглашения</a> и&nbsp;даёте согласие на&nbsp;<a class="agree" href="">обработку персональных данных</a>.</p>
         </li>
         <li class="modal__connect__content__connect__right flex">
           <h3 class="modal__connect__content__connect__right__title">Что будет дальше</h3>
@@ -990,8 +996,7 @@
       </div>
     </div>
     <button class="record-button section-group__container__list__item__content__button scroll__button__mobile">Записаться
-      на
-      бесплатную встречу</button>
+      на бесплатную встречу</button>
   </main>
   <footer class="footer flex">
     <div class="footer__container flex">
@@ -1012,7 +1017,7 @@
           xmlns="http://www.w3.org/2000/svg">
           <rect opacity="0.56" width="4" height="4" rx="2" fill="#333333" fill-opacity="0.4" />
         </svg>
-        <a class="footer__text" href="">Политика конфиденциальности</a>
+        <a class="footer__text footer__padding__button" href="">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>

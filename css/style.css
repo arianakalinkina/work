@@ -119,8 +119,8 @@ button:hover {
 } */
 
 body {
-  max-width: 1366px;
-  margin: 0 auto;
+  /* max-width: 1366px;
+  margin: 0 auto; */
   font-family: 'Noto Sans', sans-serif;
   background-color: #F4F2F0;
   position: relative;
@@ -128,6 +128,11 @@ body {
 
 header {
   width: 100%;
+}
+
+main, footer {
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 .list-reset {
@@ -164,8 +169,7 @@ header {
   position: fixed;
   z-index: 15;
   top: 0;
-  width: 100%;
-  max-width: 1366px;
+  width: 100%; 
   transition: all .5s ease;
 }
 
@@ -174,6 +178,7 @@ header {
 }
 
 .header__container {
+  max-width: 1152px;
   padding-top: 48px;
   align-items: center;
   justify-content: space-between;
@@ -958,6 +963,10 @@ transition-property: transform, opacity, border-radius;
   transition: .3s;
   outline: none;
 }
+
+.modal__close-button {
+  display: none;
+}
  
 .modal__content__left {
   width: 65.97%;
@@ -1103,6 +1112,7 @@ transition-property: transform, opacity, border-radius;
 
 .form__label {
   width: 100%;
+  position: relative;
 }
 
 .input {
@@ -1112,6 +1122,21 @@ transition-property: transform, opacity, border-radius;
   margin-bottom: 8px;
   border: 1px solid#33333329;
   border-radius: 10px;
+}
+
+.disp {
+  display: block;
+}
+
+
+.validate {
+  display: none;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  background: url('../img/validate.svg') center no-repeat;
 }
 
 input::-webkit-input-placeholder { 
@@ -1217,4 +1242,16 @@ font-family: 'DM Sans', sans-serif;
 
 .nocursor {
   cursor: auto;
+}
+
+.agree {
+  border-bottom: 1px solid #ADADAD;
+}
+
+.main__hero__container {
+  width: 90%;
+}
+
+.button__center__mobile__modal {
+  display: none;
 }
