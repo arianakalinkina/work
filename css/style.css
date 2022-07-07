@@ -36,7 +36,7 @@ button:hover {
 }
 
 .header__menu__list__item__link:hover {
-  border-bottom: 1px solid #666; 
+  border-bottom: 1px solid #666;
   margin-bottom: -1px;
 }
 
@@ -64,14 +64,14 @@ button:hover {
 .footer__text:hover {
   border-bottom: 0.5px solid #3333338F;
   margin-bottom: -1px;
-} 
+}
 
 .footer__container__left__text:hover {
   border-bottom: none;
 }
 
 .section-answers__container__accordion__item:hover .icon {
- background: url('../img/accordion-hover-icon.svg') center no-repeat;
+  background: url('../img/accordion-hover-icon.svg') center no-repeat;
 }
 
 .questions__list__item:hover ellipse {
@@ -102,25 +102,8 @@ button:hover {
   font-display: swap;
 }
 
-/* @font-face {
-  font-family: 'Noto Sans';
-  src: local('NotoSansMedium'), url('../fonts/NotoSans-Medium.ttf') format("ttf");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-} */
-
-/* @font-face {
-  font-family: 'Noto Sans';
-  src: local('DMSansRegular'), url('../fonts/NotoSansRegular.woff2') format("woff2"), url('../fonts/NotoSansRegular.woff') format("woff"); 
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-} */
 
 body {
-  /* max-width: 1366px;
-  margin: 0 auto; */
   font-family: 'Noto Sans', sans-serif;
   background-color: #F4F2F0;
   position: relative;
@@ -169,12 +152,12 @@ main, footer {
   position: fixed;
   z-index: 15;
   top: 0;
-  width: 100%; 
+  width: 100%;
   transition: all .5s ease;
 }
 
 .header.out {
-	transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .header__container {
@@ -242,7 +225,7 @@ main, footer {
   line-height: 40px;
   font-weight: 400;
 
-  color:#333333CC;
+  color: #333333CC;
 }
 
 .main__hero__container__content__record {
@@ -274,8 +257,8 @@ main, footer {
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color:#3333338F;
-  
+  color: #3333338F;
+
   background-color: #F4F2F0;
   border-radius: 10px;
 }
@@ -292,11 +275,6 @@ main, footer {
 }
 
 .main__online-groups {
-  /* padding-top: 64px;
-  padding-bottom: 80px;
-  position: relative;
-  top: -50px;
-  z-index: 10; */
   padding-top: 64px;
   padding-bottom: 80px;
 }
@@ -321,15 +299,6 @@ main, footer {
   flex-basis: 100%;
   width: 90%;
 }
-
-/* .gradient {
-  height: 250px;
-  position: absolute;
-  top: 855px;
-  z-index: -1;
-  width: 100%;
-  background: linear-gradient(180deg, #D4D4D4 41.67%, rgba(217, 217, 217, 0) 100%);
-} */
 
 .online-groups__container__left__list {
   flex-wrap: wrap;
@@ -461,7 +430,7 @@ main, footer {
 
 .section-meeting__container__list__item:nth-child(odd) {
   margin-right: 24px;
-} 
+}
 
 .section-meeting__container__list__item__number {
   font-family: 'Montserrat';
@@ -559,6 +528,7 @@ main, footer {
 .button__center {
   display: none;
 }
+
 .section-group__container__title {
   width: 23%;
 }
@@ -719,10 +689,10 @@ main, footer {
 }
 
 .section-answers__container__social-list__item {
- height: 48px;
-transition-duration: .4s;
-transition-timing-function: ease;
-transition-property: transform, opacity, border-radius;
+  height: 48px;
+  transition-duration: .4s;
+  transition-timing-function: ease;
+  transition-property: transform, opacity, border-radius;
 }
 
 .section-answers__container__descr {
@@ -809,7 +779,7 @@ transition-property: transform, opacity, border-radius;
   border-top: 1px solid #33333329;
   transition-duration: .4s;
   transition-timing-function: ease;
-  transition-property: border-top,transfrom, border-bottom;
+  transition-property: border-top, transfrom, border-bottom;
 }
 
 .section-answers__container__accordion__item:last-child {
@@ -833,9 +803,9 @@ transition-property: transform, opacity, border-radius;
   text-align: center;
   justify-content: center;
   margin-bottom: 56px;
-  
+
   background: url('../img/heart.svg') left 145px bottom 98px no-repeat,
-  url('../img/stars.svg') right 98px top 55px no-repeat;
+    url('../img/stars.svg') right 98px top 55px no-repeat;
   background-color: #33765F;
 }
 
@@ -872,7 +842,7 @@ transition-property: transform, opacity, border-radius;
 
 .heart {
   display: none;
-} 
+}
 
 .groups__icon {
   display: none;
@@ -896,7 +866,7 @@ transition-property: transform, opacity, border-radius;
 .footer__text {
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;  
+  line-height: 20px;
   color: #3333338F;
 }
 
@@ -932,7 +902,7 @@ transition-property: transform, opacity, border-radius;
   overflow-y: scroll;
   padding: 60px 15px;
 }
- 
+
 .modal_active {
   display: flex;
   position: fixed;
@@ -941,7 +911,7 @@ transition-property: transform, opacity, border-radius;
   opacity: 1;
   transition: .5s;
 }
- 
+
 .modal__content {
   width: 86.19%;
   border-radius: 3px;
@@ -949,7 +919,7 @@ transition-property: transform, opacity, border-radius;
   display: flex;
   align-items: flex-start;
 }
- 
+
 .modal__close-button {
   display: flex;
   justify-content: center;
@@ -967,8 +937,9 @@ transition-property: transform, opacity, border-radius;
 .modal__close-button {
   display: none;
 }
- 
+
 .modal__content__left {
+  display: none;
   width: 65.97%;
   padding: 32px 0 40px 32px;
   background-color: #fff;
@@ -1005,6 +976,7 @@ transition-property: transform, opacity, border-radius;
 
 .modal-title__svg {
   margin-right: 24px;
+  height: 120px;
 }
 
 .modal__content__left__list__item__title {
@@ -1128,24 +1100,22 @@ transition-property: transform, opacity, border-radius;
   display: block;
 }
 
-
-.validate {
-  display: none;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  right: 10px;
-  top: 20px;
-  background: url('../img/validate.svg') center no-repeat;
+.js-validate-error-field {
+  background: url('../img/validate.svg') right 10px center no-repeat;
+  background-color: #fff;
 }
 
-input::-webkit-input-placeholder { 
-font-size: 20px;
-font-weight: 400;
-line-height: 28px;
-text-align: center;
-color: #999;
-font-family: 'DM Sans', sans-serif;
+.js-validate-error-label {
+  padding-left: 10px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: #999;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .form__button {

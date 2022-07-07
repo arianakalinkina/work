@@ -5,7 +5,6 @@ var selector = document.querySelectorAll("input[type='tel']");
 var im = new Inputmask("+7(999) 999-99-99");
 im.mask(selector);
 
-  const form = document.getElementsByClassName('.form');
   new window.JustValidate('.form', {
     rules: {
       tel: {
@@ -22,36 +21,60 @@ im.mask(selector);
         required: 'Введите имя',
         minLength: 'Введите 3 и более символов',
         maxLength: 'Запрещено вводить более 15 символов',
-        function () {
-          ('.validate').addClass('disp');
-         }
       },
       tel: {
         required: 'Введите телефон',
         function: 'Здесь должно быть 10 символов без +7',
-        function () {
-          ('.validate').addClass('disp');
-         }
       }
     }
       });
-  // new JustValidate('.form', {
-  //   rules: {
-  //     name: {
-  //       required: true,
-  //       minLength: 3,
-  //       maxLenght:30
-  //     },
-  //     tel: {
-  //       required: true,
-  //       function: () => {
-  //         const phone = selector.Inputmask.unmaskedvalue()
-  //         console.log(phone)
-  //         return Number(phone) && phone.lenght ===10
-  //       }
-  //     },
-  //     },
-  // });
+
+      new window.JustValidate('.form-2', {
+        rules: {
+          tel: {
+            required: true,
+            function: () => {
+              const phone = telSelector.inputmask.unmaskedvalue();
+              return Number(phone) && phone.length === 10;
+            }
+          }
+        },
+        colorWrong: '#ff0f0f',
+        messages: {
+          name: {
+            required: 'Введите имя',
+            minLength: 'Введите 3 и более символов',
+            maxLength: 'Запрещено вводить более 15 символов',
+          },
+          tel: {
+            required: 'Введите телефон',
+            function: 'Здесь должно быть 10 символов без +7',
+          }
+        }
+          });
+          new window.JustValidate('.form-3', {
+            rules: {
+              tel: {
+                required: true,
+                function: () => {
+                  const phone = telSelector.inputmask.unmaskedvalue();
+                  return Number(phone) && phone.length === 10;
+                }
+              }
+            },
+            colorWrong: '#ff0f0f',
+            messages: {
+              name: {
+                required: 'Введите имя',
+                minLength: 'Введите 3 и более символов',
+                maxLength: 'Запрещено вводить более 15 символов',
+              },
+              tel: {
+                required: 'Введите телефон',
+                function: 'Здесь должно быть 10 символов без +7',
+              }
+            }
+              });
 
 $(function () {
   $('.record-button').click(function () {
@@ -105,23 +128,96 @@ $(window).on('resize scroll', function () {
             }
           });
 
-          $('.button__antistress').click(function () {
+          $('.online-groups__container__left__list__item__content__button').click(function () {
             $('.button__center__mobile__modal').addClass('disp');
           });
         }
+
 $(function () {
   $('.button__antistress').click(function () {
-    $('#modal__antistress').addClass('modal_active');
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__antistress').addClass('disp');
     $('body').addClass('hidden');
     $('body').addClass('cursor');
     $('.modal__content').addClass('nocursor');
     $('.scroll__button__mobile').addClass('delete');
   });
- 
+
+  $('.button__emigration').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__emigration').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
+  $('.button__relations').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__relations').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
+  $('.button__one').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__one').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
+  $('.button__problems').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__problems').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
+  $('.button__problems-choose').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__problems-choose').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
+  $('.button__anxiety').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__anxiety').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
+  $('.button__burnout').click(function () {
+    $('.modal-groups').addClass('modal_active');
+    $('#modal__burnout').addClass('disp');
+    $('body').addClass('hidden');
+    $('body').addClass('cursor');
+    $('.modal__content').addClass('nocursor');
+    $('.scroll__button__mobile').addClass('delete');
+  });
+
   $('.modal__close-button').click(function () {
     $('.modal').removeClass('modal_active');
     $('body').removeClass('hidden');
     $('body').removeClass('cursor');
+    $('#modal__antistress').removeClass('disp');
+    $('#modal__emigration').removeClass('disp');
+    $('#modal__relations').removeClass('disp');
+    $('#modal__one').removeClass('disp');
+    $('#modal__problems').removeClass('disp');
+    $('#modal__problems-choose').removeClass('disp');
+    $('#modal__anxiety').removeClass('disp');
+    $('#modal__burnout').removeClass('disp');
   });
  
   $('.modal').mouseup(function (e) {
@@ -130,6 +226,14 @@ $(function () {
       $(this).removeClass('modal_active');
       $('body').removeClass('hidden');
       $('body').removeClass('cursor');
+      $('#modal__antistress').removeClass('disp');
+      $('#modal__emigration').removeClass('disp');
+      $('#modal__relations').removeClass('disp');
+      $('#modal__one').removeClass('disp');
+      $('#modal__problems').removeClass('disp');
+      $('#modal__problems-choose').removeClass('disp');
+      $('#modal__anxiety').removeClass('disp');
+      $('#modal__burnout').removeClass('disp');
     }
   });
 });

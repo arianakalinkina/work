@@ -848,7 +848,7 @@
   }
 
   .modal__content__left__list__item__descr {
-    width: 80%;
+    width: 90%;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -868,6 +868,10 @@
   }
 
   .modal__right__button {
+    background-color: #333;
+  }
+
+  .modal__right__button:hover {
     background-color: #333;
   }
 
